@@ -1,5 +1,1 @@
-
-import RImageMiddle from './assets/RImageMiddle.jsx'
-
-
-export  { RImageMiddle }
+module.exports = require('./assets/')

@@ -24,8 +24,8 @@ class RImageMiddle extends Component {
         height : height + 'px'
       }
 
-      return <div className="imageMiddle" style={_divCss}>
-        <span style={_spanCss}></span>
+      return <div className="imageMiddle" style={_divCss} >
+        <span style={_spanCss} ></span>
         {imgWidth && !imgHeight && <img src={`./images/${imageUrl}`} width={imgWidth} alt={alt || ''} /> }
         {imgHeight && !imgWidth && <img src={`./images/${imageUrl}`} height={imgHeight} alt={alt || ''} />}
         {imgWidth && imgHeight && <img src={`./images/${imageUrl}`} width={imgWidth} height={imgHeight} alt={alt || ''} />}
@@ -36,4 +36,4 @@ class RImageMiddle extends Component {
 }
 
 
-export  { RImageMiddle }
+export  default RImageMiddle

@@ -1,8 +1,8 @@
 {
   "name": "rtcs",
-  "version": "1.0.0",
+  "version": "2.6.0",
   "description": "react Component image text url queryString query-String ",
-  "main": "index.jsx",
+  "main": "index.js",
   "scripts": {
   },
   "repository": {
@@ -14,9 +14,15 @@
   "license": "MIT",
 
   "devDependencies": {
+    "react": "^15.3.0",
+    "babel-runtime": "6.x",
 
+    "react-dom": "^15.4.0"
   },
   "dependencies": {
+    "react": "^15.3.0",
+    "babel-runtime": "6.x",
 
+    "react-dom": "^15.4.0"
   }
 }
