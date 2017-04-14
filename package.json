@@ -1,7 +1,7 @@
 {
-  "name": "rc-calendar",
-  "version": "8.1.0",
-  "description": "React Calendar",
+  "name": "rtcs",
+  "version": "4.1.0",
+  "description": "react Component image text url queryString query-String ",
   "keywords": [
     "react",
     "react-calendar",
@@ -23,15 +23,11 @@
       "./src/index.js"
     ]
   },
-  "homepage": "http://github.com/react-component/calendar",
-  "author": "yiminghe@gmail.com",
   "repository": {
     "type": "git",
-    "url": "git@github.com:react-component/calendar.git"
+    "url": "https://github.com/976500133/rtc"
   },
-  "bugs": {
-    "url": "http://github.com/react-component/calendar/issues"
-  },
+  "author": "976500133@qq.com",
   "licenses": "MIT",
   "config": {
     "port": 8002
