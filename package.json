@@ -1,28 +1,93 @@
 {
-  "name": "rtcs",
-  "version": "2.6.0",
-  "description": "react Component image text url queryString query-String ",
-  "main": "index.js",
-  "scripts": {
+  "name": "rc-calendar",
+  "version": "8.1.0",
+  "description": "React Calendar",
+  "keywords": [
+    "react",
+    "react-calendar",
+    "react-component",
+    "calendar",
+    "ui component",
+    "ui",
+    "component"
+  ],
+  "files": [
+    "lib",
+    "assets/*.css",
+    "dist"
+  ],
+  "main": "lib/index",
+  "entry": {
+    "rc-calendar": [
+      "./assets/index.less",
+      "./src/index.js"
+    ]
   },
+  "homepage": "http://github.com/react-component/calendar",
+  "author": "yiminghe@gmail.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/976500133/rtc"
+    "url": "git@github.com:react-component/calendar.git"
   },
-  "keywords": ["react", "Component", "image" ,"text" ,"url", "queryString", "query-String" ],
-  "author": "",
-  "license": "MIT",
-
+  "bugs": {
+    "url": "http://github.com/react-component/calendar/issues"
+  },
+  "licenses": "MIT",
+  "config": {
+    "port": 8002
+  },
+  "scripts": {
+    "build": "rc-tools run build",
+    "watch": "rc-tools run watch",
+    "gh-pages": "rc-tools run gh-pages",
+    "start": "rc-tools run server",
+    "pub": "rc-tools run pub --babel-runtime",
+    "lint": "rc-tools run lint",
+    "karma": "rc-tools run karma",
+    "saucelabs": "rc-tools run saucelabs",
+    "test": "jest",
+    "chrome-test": "rc-tools run chrome-test",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*"
+    ],
+    "setupFiles": [
+      "./tests/setup.js"
+    ]
+  },
   "devDependencies": {
-    "react": "^15.3.0",
-    "babel-runtime": "6.x",
-
-    "react-dom": "^15.4.0"
+    "async": "~0.9.0",
+    "bootstrap": "~3.3.2",
+    "coveralls": "^2.11.15",
+    "enzyme": "^2.8.0",
+    "enzyme-to-json": "^1.5.0",
+    "expect.js": "~0.3.1",
+    "jest": "^19.0.0",
+    "jquery": "~1.11.3",
+    "mockdate": "^2.0.1",
+    "object-assign": "4.x",
+    "pre-commit": "1.x",
+    "rc-dialog": "^6.0.1",
+    "rc-select": "^6.0.6",
+    "rc-time-picker": "2.x",
+    "rc-tools": "5.x",
+    "react": "15.x",
+    "react-addons-test-utils": "15.x",
+    "react-dom": "15.x",
+    "react-test-renderer": "^15.5.4"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "dependencies": {
-    "react": "^15.3.0",
     "babel-runtime": "6.x",
-
-    "react-dom": "^15.4.0"
+    "classnames": "2.x",
+    "create-react-class": "^15.5.2",
+    "moment": "2.x",
+    "prop-types": "^15.5.8",
+    "rc-trigger": "1.x",
+    "rc-util": "3.x"
   }
 }

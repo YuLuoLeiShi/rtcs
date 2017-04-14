@@ -1,1 +1,2 @@
-module.exports = require('./assets/')
+import Calendar from './src/';
+export default Calendar;
