@@ -16,11 +16,11 @@ class AppleBar extends Component {
 
     componentDidMount() {
       this.initAppleAnimate('homeFooter-apple')
-      $(document).bind('mousemove',move)
+      $(document).bind('mousemove',this.move)
     }
 
     componentWillUnmount() {
-      $(document).unbind('mousemove',move)
+      $(document).unbind('mousemove',this.move)
     }
 
 
@@ -32,10 +32,10 @@ class AppleBar extends Component {
     initAppleAnimate(el){
       var oUl=document.getElementById(el);
       var aImg=oUl.getElementsByTagName("img");
-      var aImgW = [48,56,68,50,48]
+      var aImgW = this.props.appData
 
       aImgW.map((_item,i)=> {
-        aImg[i].style.width=_item/2+"px";
+        aImg[i].style.width=(_item.width || 50)/2+"px";
       })
     }
 
@@ -46,7 +46,7 @@ class AppleBar extends Component {
       var disX=0;
       var disY=0;
       var dis=0;
-      var aImgW = [48,56,68,50,48]
+      var aImgW = this.props.appData
 
       aImgW.map((_item,i)=> {
 
@@ -57,7 +57,7 @@ class AppleBar extends Component {
         if(scale < 0.5){
           scale=0.5;
         }
-        aImg[i].style.width=aImgW[i]*scale+"px";
+        aImg[i].style.width=(aImgW[i].width || 50)*scale+"px";
       })
 
     }
@@ -73,7 +73,7 @@ class AppleBar extends Component {
                 </div>
                 <ul className="homeFooter-apple" id="homeFooter-apple">
                   { appData && appData.length > 0 && appData.map((item,index) => {
-                    return (<li><a href="#"><img src={item.image} /></a>{item.title && <span>{item.title}</span>}</li>)
+                    return (<li onClick={() => { item.cb && item.cb()} } key={`${item.image}${item.title}`}><a href="#"><img src={item.image} /></a>{item.title && <span>{item.title}</span>}</li>)
                   })}
 
 
