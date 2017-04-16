@@ -95,7 +95,7 @@ import { RImageMiddle }  from 'rtcs'
 import { AppleBar }  from 'rtcs'
 
 const _appData = [{
-        title : "项目问答", //标题
+        title : "我的标题", //标题
         image : "./images/home-04.png", //icon 地址
         width : 48, // icon 宽
         cb : () => {alert(0)} //点击回调
