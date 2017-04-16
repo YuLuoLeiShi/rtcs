@@ -8,7 +8,6 @@
 # Rtcs
 
 
-![](https://img.shields.io/travis/ant-design/ant-design.svg?style=flat-square)]()
 
 [![Dependency Status](https://img.shields.io/gemnasium/react-component/trigger.svg?style=flat-square)]()
 
