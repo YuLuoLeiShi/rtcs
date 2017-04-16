@@ -1,3 +1,6 @@
 import RImageMiddle from './RImageMiddle';
+import AppleBar from './AppleBar';
 
-export default RImageMiddle;
+
+
+export { RImageMiddle , AppleBar} ;
