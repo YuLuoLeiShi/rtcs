@@ -1,8 +1,8 @@
 
 import React, {Component} from 'react';
-
 import '../assets/css/base.css';
 import '../assets/css/AppleBar.css';
+
 
 
 
@@ -10,16 +10,23 @@ class AppleBar extends Component {
 
     constructor(props){
     	super(props);
+      this.move = this.move.bind(this)
+
     }
 
     componentDidMount() {
-
       this.initAppleAnimate('homeFooter-apple')
-      $(document).bind('mousemove',(ev) => {
-        this.appleAnimate(ev,'homeFooter-apple')
-      })
+      $(document).bind('mousemove',move)
     }
 
+    componentWillUnmount() {
+      $(document).unbind('mousemove',move)
+    }
+
+
+    move(ev){
+      this.appleAnimate(ev,'homeFooter-apple')
+    }
 
 
     initAppleAnimate(el){
@@ -57,19 +64,19 @@ class AppleBar extends Component {
 
     render(){
 
-
+      const { appData , appBarStyle , appBarCenterColr } = this.props;
 
       return <div>
                 <div className="homeFooter" id="homeFooter" data-from="rtcs">
-                  <div className="homeFooter-apple-bg"></div>
-                  <div className="homeFooter-apple-box"></div>
+                  <div style={appBarStyle || {}} className="homeFooter-apple-bg"></div>
+                  {appBarCenterColr && <div style={{backgroundColor:appBarCenterColr}} className="homeFooter-apple-box"></div> }
                 </div>
                 <ul className="homeFooter-apple" id="homeFooter-apple">
-                  <li><a href="#"><img src="images/home-04.png" /></a><span>项目问答</span></li>
-                  <li><a href="#"><img src="images/home-05.png" /></a><span>团队梳理</span></li>
-                  <li className="center"><a href="#"><img src="images/home-06.png" /></a><span>协作</span></li>
-                  <li><a href="#"><img src="images/home-07.png" /></a><span>协作</span></li>
-                  <li><a href="#"><img src="images/home-08.png" /></a><span>历史回顾</span></li>
+                  { appData && appData.length > 0 && appData.map((item,index) => {
+                    return (<li><a href="#"><img src={item.image} /></a>{item.title && <span>{item.title}</span>}</li>)
+                  })}
+
+
                 </ul>
            </div>
     }
