@@ -83,6 +83,8 @@ import { RImageMiddle }  from 'rtcs'
 
 ```
 
+![RImageMiddle](./assets/D1.png)
+
 
 
 - AppleBar
@@ -107,3 +109,5 @@ const _appData = [{
 
 
 ```
+
+![RImageMiddle](./assets/D2.gif)
